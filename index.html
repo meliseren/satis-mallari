@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Satış Malları</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.6">
+  <meta content="no-cache" />
+  <!-- webix -->
+  <link rel="stylesheet" href="https://cdn.webix.com/edge/webix.css" type="text/css">
+  <script src="https://cdn.webix.com/edge/webix.js" type="text/javascript"></script>
+  <!-- Css -->
+  <link rel="stylesheet" href="//cdn.webix.com/materialdesignicons/5.8.95/css/materialdesignicons.min.css"
+    type="text/css" charset="utf-8">
+  <style>
+    /* @media screen and (max-width: 850px) {
+      .webix_resizer_vx {
+        display: none !important;
+      }
+    }
+
+    @media screen and (max-width: 1150px) {
+      .resizer1 {
+        display: none !important;
+      }
+    } */
+  </style>
+</head>
+
+<body>
+  <script type="text/javascript" charset="utf-8">
+    webix.ready(function () {
+      bodyStart();
+    });
+
+
+    function bodyStart() {
+      webix.ui({
+        view: "scrollview",
+        scroll: "y",
+        body: {
+          rows: [{
+              view: "toolbar",
+              padding: 3,
+              elements: [{
+                  view: "icon",
+                  icon: "wxi-dots",
+                  click: function () {
+                    $$("$sidebar1").toggle();
+                  }
+                },
+                {
+                  view: "label",
+                  label: "MasterPiece Azure"
+                }
+              ]
+            },
+            {
+              cols: [{
+                  view: "sidebar",
+                  data: menu_data,
+                  on: {
+                    onAfterSelect: function (id) {
+
+                    }
+                  }
+                },
+                {
+                  view: "layout",
+                  id: "body",
+                  rows: [{
+                    padding: 0,
+                    responsive: "body",
+                    cols: [{
+                        header: "Filtreler",
+                        body: {
+                          view: "list",
+                          data: ["Users", "Reports", "Settings"],
+                          ready: function () {
+                            this.select(this.getFirstId());
+                          },
+                          select: true,
+                          scroll: false,
+                        },
+                        minWidth: 300,
+                        maxWidth: 1200,
+
+                      },
+                      {
+                        view: "resizer",
+                        css: "resizer1"
+                      },
+                      {
+                        view: "datatable",
+                        columns: [{
+                            id: "title",
+                            fillspace: 1
+                          },
+                          {
+                            id: "votes"
+                          }
+                        ],
+                        data: menu_data,
+                        minWidth: 300,
+                        maxWidth: 2200
+                      },
+                      {
+                        view: "resizer"
+                      },
+                      {
+                        header: "Temel Bilgiler",
+                        body: {
+                          view: "list",
+                          data: ["Users", "Reports", "Settings"],
+                          ready: function () {
+                            this.select(this.getFirstId());
+                          },
+                          select: true,
+                          scroll: false,
+                        },
+                        minWidth: 300,
+                        maxWidth: 1200
+                      },
+                    ]
+                  }]
+                }
+              ]
+            }
+          ]
+
+        }
+      })
+    }
+
+
+
+
+    function replaceBody() {
+      if (window.innerWidth <= 910) {
+        webix.ui([{
+        view: "layout",
+        id: "body",
+        rows: [{
+          id: "melis",
+          padding: 0,
+          responsive: "body",
+          rows: [{
+              header: "Filtreler",
+              body: {
+                view: "list",
+                data: ["Users", "Reports", "Settings"],
+                ready: function () {
+                  this.select(this.getFirstId());
+                },
+                select: true,
+                scroll: false,
+              },
+              minWidth: 300,
+              maxWidth: 1200,
+            },
+            {
+              view: "resizer",
+              css: "resizer1"
+            },
+            {
+              view: "datatable",
+              columns: [{
+                  id: "title",
+                  fillspace: 1
+                },
+                {
+                  id: "votes"
+                }
+              ],
+              minWidth: 300,
+              maxWidth: 2200
+            },
+            {
+              view: "resizer"
+            },
+            {
+              header: "Temel Bilgiler",
+              body: {
+                view: "list",
+                data: ["Users", "Reports", "Settings"],
+                ready: function () {
+                  this.select(this.getFirstId());
+                },
+                select: true,
+                scroll: false,
+              },
+              minWidth: 300,
+              maxWidth: 1200
+            },
+          ],
+        }]
+      }], $$('body'));
+      this.enable();
+      } else {
+        webix.ui([{
+        view: "layout",
+        id: "body",
+        rows: [{
+          id: "melis",
+          padding: 0,
+          responsive: "body",
+          cols: [{
+              header: "Filtreler",
+              body: {
+                view: "list",
+                data: ["Users", "Reports", "Settings"],
+                ready: function () {
+                  this.select(this.getFirstId());
+                },
+                select: true,
+                scroll: false,
+              },
+              minWidth: 300,
+              maxWidth: 1200,
+            },
+            {
+              view: "resizer",
+              css: "resizer1"
+            },
+            {
+              view: "datatable",
+              columns: [{
+                  id: "title",
+                  fillspace: 1
+                },
+                {
+                  id: "votes"
+                }
+              ],
+              minWidth: 300,
+              maxWidth: 2200
+            },
+            {
+              view: "resizer"
+            },
+            {
+              header: "Temel Bilgiler",
+              body: {
+                view: "list",
+                data: ["Users", "Reports", "Settings"],
+                ready: function () {
+                  this.select(this.getFirstId());
+                },
+                select: true,
+                scroll: false,
+              },
+              minWidth: 300,
+              maxWidth: 1200
+            },
+          ],
+        }]
+      }], $$('body'));
+      this.enable();
+      }
+    }
+    window.addEventListener('resize', replaceBody);
+
+
+
+
+
+
+
+
+
+
+
+    var menu_data = [{
+        id: "belgeler",
+        icon: "mdi mdi-file-outline",
+        value: "Belgeler",
+        data: [{
+          id: "belgeler1",
+          icon: "mdi mdi-file-document-outline",
+          value: "Faturalar"
+        }]
+      },
+      {
+        id: "malzemelerHizmetler",
+        icon: "mdi mdi-inbox-multiple-outline",
+        value: "Malzemeler ve Hizmetler",
+        data: [{
+            id: "hizmetler",
+            icon: "mdi mdi-room-service-outline",
+            value: "Hizmetler"
+          },
+          {
+            id: "satisMallari",
+            icon: "mdi mdi-inbox-outline",
+            value: "Satış Malları"
+          }
+        ]
+      },
+    ]
+  </script>
+</body>
+
+</html>
